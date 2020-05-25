@@ -3,10 +3,12 @@ package com.magalera.bilardclub.domain;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
+@NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Getter
@@ -16,7 +18,7 @@ public class BilardClub {
     @GeneratedValue
     @Column(name = "BILARD_CLUB_ID", unique = true)
     private Long id;
-    
+
     @Column(name = "BILARD_CLUB_TABLES")
     @OneToMany(
             targetEntity = Table.class,
@@ -39,7 +41,10 @@ public class BilardClub {
     private Tournament tournament;
 
     @ManyToOne
-    @JoinColumn (name = "CITY_ID")
+    @JoinColumn(name = "CITY_ID")
     private City city;
-}
 
+    @OneToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn (name = "PRICES_ID")
+    private Prices prices;
+}

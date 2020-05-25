@@ -18,12 +18,11 @@ public class City {
     @Column(name = "CITY_ID", unique = true)
     private Long id;
 
-    @Column(name = "CITY_BILARD_CLUBS")
     @OneToMany(
             targetEntity = BilardClub.class,
             mappedBy = "city",
             cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     private List<BilardClub> clubs;
 }
