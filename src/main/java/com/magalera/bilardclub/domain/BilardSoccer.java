@@ -31,4 +31,7 @@ public class BilardSoccer {
     @ManyToOne
     @JoinColumn (name = "BILARD_CLUB_ID")
     private BilardClub bilardClub;
+
+    @OneToOne(mappedBy = "bilardSoccer")
+    private Reservation reservation;
 }

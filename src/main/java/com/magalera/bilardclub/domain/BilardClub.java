@@ -33,9 +33,13 @@ public class BilardClub {
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    private List<BilardSoccer> bilards;
+    private List<BilardSoccer> bilardSoccers;
 
     @OneToOne(mappedBy = "bilardClub")
     private Tournament tournament;
+
+    @ManyToOne
+    @JoinColumn (name = "CITY_ID")
+    private City city;
 }
 

@@ -31,4 +31,8 @@ public class Table {
     @ManyToOne
     @JoinColumn (name = "TOURNAMENT_ID")
     private Tournament tournament;
+
+    @OneToOne(mappedBy = "table")
+    private Reservation reservation;
+
 }

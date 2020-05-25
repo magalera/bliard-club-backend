@@ -33,4 +33,8 @@ public class Tournament {
     @OneToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "BILARD_CLUB_ID")
     private BilardClub bilardClub;
+
+    @OneToOne(mappedBy = "tournament")
+    private  Reservation reservation;
+
 }
