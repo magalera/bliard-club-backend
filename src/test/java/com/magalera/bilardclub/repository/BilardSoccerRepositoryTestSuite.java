@@ -1,7 +1,6 @@
 package com.magalera.bilardclub.repository;
 
 import com.magalera.bilardclub.domain.BilardSoccer;
-import com.magalera.bilardclub.domain.Table;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -2,7 +2,6 @@ package com.magalera.bilardclub.repository;
 
 import com.magalera.bilardclub.domain.BilardClub;
 import com.magalera.bilardclub.domain.City;
-import com.magalera.bilardclub.domain.Table;
 import com.magalera.bilardclub.domain.Tournament;
 import org.junit.Assert;
 import org.junit.Test;
