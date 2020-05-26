@@ -21,37 +21,18 @@ public class BilardSoccerRepositoryTestSuite {
 
     @Test
     public void testBilardSoccerRepositorySave() {
-/*
         // Given
-        BilardSoccer bilardSoccer = BilardSoccer.builder().number(4).isAvailable(true).build();
+        BilardSoccer bilardSoccer = BilardSoccer.builder().number(3).isAvailable(true).build();
 
         // When
-        BilardSoccer actual = bilardSoccerRepository.save(bilardSoccer);
+        BilardSoccer saved = bilardSoccerRepository.save(bilardSoccer);
 
         // Then
-        Long id = actual.getId();
-        Optional<BilardSoccer> byId = bilardSoccerRepository.findById(id);
-        Assert.assertTrue(byId.isPresent());
+        Long id = saved.getId();
+        Optional<BilardSoccer> actualBS = bilardSoccerRepository.findById(id);
+        Assert.assertTrue(actualBS.isPresent());
 
         // CleanUp
         bilardSoccerRepository.deleteById(id);
     }
-
-    @Test
-    public void testBilardSoccerRepositoryfindByNumber() {
-
-        // Given
-        BilardSoccer bilardSoccer = BilardSoccer.builder().number(6).isAvailable(true).build();
-
-        // When
-        BilardSoccer saved = bilardSoccerRepository.save(bilardSoccer);
-        BilardSoccer actual = bilardSoccerRepository.findBilardSoccerByNumber(saved.getNumber());
-
-        // Then
-        Assert.assertEquals(Optional.of(6), Optional.of(actual.getNumber()));
-
-        // CleanUp
-        bilardSoccerRepository.deleteById(saved.getId());*/
-    }
-
 }
