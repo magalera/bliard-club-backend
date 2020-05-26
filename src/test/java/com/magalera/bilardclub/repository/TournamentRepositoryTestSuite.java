@@ -10,11 +10,11 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
+@Transactional
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class TournamentRepositoryTestSuite {
@@ -22,6 +22,8 @@ public class TournamentRepositoryTestSuite {
     private TournamentRepository tournamentRepository;
     @Autowired
     private CityRepository cityRepository;
+    @Autowired
+    private BilardClubRepository bilardClubRepository;
 
     @Test
     public void testTournamentRepositorySave() {
@@ -29,6 +31,7 @@ public class TournamentRepositoryTestSuite {
         City ckCity = City.builder().name("Kielce").build();
         cityRepository.save(ckCity);
         BilardClub bilardClub = BilardClub.builder().name("KCK ck").city(ckCity).build();
+        bilardClubRepository.save(bilardClub);
         Tournament tournament = Tournament.builder().bilardClub(bilardClub).build();
 
         // When

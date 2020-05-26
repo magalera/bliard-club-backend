@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 @NoArgsConstructor
@@ -19,6 +20,7 @@ public class BilardClub {
     @Column(name = "BILARD_CLUB_ID", unique = true)
     private Long id;
 
+    @NotNull
     private String name;
 
     @OneToMany(
@@ -40,10 +42,12 @@ public class BilardClub {
     @OneToOne(mappedBy = "bilardClub")
     private Tournament tournament;
 
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "CITY_ID")
     private City city;
 
+    @NotNull
     @OneToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn (name = "PRICES_ID")
     private Prices prices;

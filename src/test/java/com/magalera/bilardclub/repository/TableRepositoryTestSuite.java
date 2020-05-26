@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -20,7 +21,7 @@ public class TableRepositoryTestSuite {
     @Test
     public void testTableRepositorySave() {
         // Given
-        Table table = Table.builder().number(2).build();
+        Table table = Table.builder().number(3).build();
 
         // When
         Table saved = tableRepository.save(table);
@@ -31,6 +32,6 @@ public class TableRepositoryTestSuite {
         Assert.assertTrue(actualTable.isPresent());
 
         // CleanUp
-        tableRepository.deleteById(id);
+        //tableRepository.deleteById(id);
     }
 }
