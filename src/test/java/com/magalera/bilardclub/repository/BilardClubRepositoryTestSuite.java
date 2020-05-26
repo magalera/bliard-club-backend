@@ -62,5 +62,6 @@ public class BilardClubRepositoryTestSuite {
         assertTrue(actualClub.isPresent());
 
         // CleanUp
+        bilardClubRepository.deleteById(id);
     }
 }

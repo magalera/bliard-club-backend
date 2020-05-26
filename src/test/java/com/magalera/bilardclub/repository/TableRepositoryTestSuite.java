@@ -31,6 +31,6 @@ public class TableRepositoryTestSuite {
         Assert.assertTrue(actualTable.isPresent());
 
         // CleanUp
-        //tableRepository.deleteById(id);
+        tableRepository.deleteById(id);
     }
 }

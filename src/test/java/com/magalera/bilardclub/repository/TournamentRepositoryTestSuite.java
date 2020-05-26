@@ -42,6 +42,6 @@ public class TournamentRepositoryTestSuite {
         Assert.assertTrue(actualTournament.isPresent());
 
         // CleanUp
-        //tournamentRepository.deleteById(id);
+        tournamentRepository.deleteById(id);
     }
 }
