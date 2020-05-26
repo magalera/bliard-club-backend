@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 @AllArgsConstructor
@@ -19,8 +20,10 @@ public class Reservation {
 
     private ReservationType type;
 
+    @NotNull
     private LocalDate startDate;
 
+    @NotNull
     private LocalDate endDate;
 
     @OneToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -35,6 +38,7 @@ public class Reservation {
     @JoinColumn (name = "TOURNAMENT_ID")
     private Tournament tournament;
 
+    @NotNull
     @OneToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn (name = "USER_ID")
     private User user;
