@@ -19,6 +19,9 @@ public class BilardClub {
     @Column(name = "BILARD_CLUB_ID", unique = true)
     private Long id;
 
+    @Column(name = "BILARD_CLUB_NAME")
+    private String name;
+
     @Column(name = "BILARD_CLUB_TABLES")
     @OneToMany(
             targetEntity = Table.class,

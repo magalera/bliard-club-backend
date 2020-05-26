@@ -18,6 +18,9 @@ public class City {
     @Column(name = "CITY_ID", unique = true)
     private Long id;
 
+    @Column(name = "CITY_NAME")
+    private String name;
+
     @OneToMany(
             targetEntity = BilardClub.class,
             mappedBy = "city",
