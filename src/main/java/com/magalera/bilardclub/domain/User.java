@@ -18,15 +18,12 @@ public class User {
     private Long id;
 
     @NotNull
-    @Column(name = "USER_NAME")
     private String name;
 
     @NotNull
-    @Column(name = "EMAIL")
     private String email;
 
     @NotNull
-    @Column(name = "PASSWORD")
     private String password;
 
     @OneToOne(mappedBy = "user")

@@ -21,7 +21,6 @@ public class Table {
     private Long id;
 
     @NotNull
-    @Column(name = "TABLE_NUMBER")
     private Integer number;
 
     @ManyToOne

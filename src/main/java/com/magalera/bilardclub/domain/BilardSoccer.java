@@ -21,7 +21,6 @@ public class BilardSoccer {
     private Long id;
 
     @NotNull
-    @Column(name = "BILARD_SOCCER_NUMBER")
     private Integer number;
 
     @NotNull

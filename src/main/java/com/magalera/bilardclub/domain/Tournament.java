@@ -20,8 +20,7 @@ public class Tournament {
     @NotNull
     @Column(name = "TOURNAMENT_ID", unique = true)
     private Long id;
-    
-    @Column(name = "TOURNAMENT_TABLES")
+
     @OneToMany(
             targetEntity = Table.class,
             mappedBy = "tournament",

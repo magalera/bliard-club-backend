@@ -19,10 +19,8 @@ public class Reservation {
 
     private ReservationType type;
 
-    @Column(name = "START_DATE")
     private LocalDate startDate;
 
-    @Column(name = "END_DATE")
     private LocalDate endDate;
 
     @OneToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
