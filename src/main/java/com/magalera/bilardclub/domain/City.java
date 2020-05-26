@@ -1,12 +1,14 @@
 package com.magalera.bilardclub.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
 
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -18,7 +20,6 @@ public class City {
     @Column(name = "CITY_ID", unique = true)
     private Long id;
 
-    @Column(name = "CITY_NAME")
     private String name;
 
     @OneToMany(
