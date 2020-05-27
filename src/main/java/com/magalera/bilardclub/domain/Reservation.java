@@ -1,13 +1,16 @@
 package com.magalera.bilardclub.domain;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
@@ -21,10 +24,10 @@ public class Reservation {
     private ReservationType type;
 
     @NotNull
-    private LocalDate startDate;
+    private Timestamp startDate;
 
     @NotNull
-    private LocalDate endDate;
+    private Timestamp endDate;
 
     @OneToOne (cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn (name = "TABLE_ID")
