@@ -41,17 +41,19 @@ public class BilardClubRepositoryTestSuite {
         tables.add(table2);
         tableRepository.saveAll(tables);
 
-        City ckCity = City.builder().name("Kielce").build();
+        City ckCity = City.builder().name("Zakopane").build();
         cityRepository.save(ckCity);
         Tournament tournament = Tournament.builder().build();
         tournamentRepository.save(tournament);
         Prices prices = Prices.builder().tablePrice(8.0).bilardSoccerPrice(16.0).tournamentPrice(150.0).build();
         pricesRepository.save(prices);
-        BilardClub bilardClub = BilardClub.builder().name("Bilard KCK").city(ckCity).tables(tables).tournament(tournament).prices(prices).build();
+        BilardClub bilardClub = BilardClub.builder().name("Górski Bilard Club").city(ckCity).tables(tables).tournament(tournament).prices(prices).build();
         bilardClub.getTables().add(table1);
         bilardClub.getTables().add(table2);
         table1.setBilardClub(bilardClub);
         table2.setBilardClub(bilardClub);
+        bilardClub.setTournament(tournament);
+        tournament.setBilardClub(bilardClub);
 
         // When
         BilardClub saved = bilardClubRepository.save(bilardClub);
@@ -63,5 +65,8 @@ public class BilardClubRepositoryTestSuite {
 
         // CleanUp
         bilardClubRepository.deleteById(id);
+        tableRepository.deleteAll(tables);
+        tournamentRepository.deleteById(tournament.getId());
+        cityRepository.deleteById(ckCity.getId());
     }
 }

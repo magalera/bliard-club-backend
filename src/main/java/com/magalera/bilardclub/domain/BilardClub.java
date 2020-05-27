@@ -1,9 +1,6 @@
 package com.magalera.bilardclub.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -13,6 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Getter
+@Setter
 @Entity(name = "BILARD_CLUBS")
 public class BilardClub {
     @Id
