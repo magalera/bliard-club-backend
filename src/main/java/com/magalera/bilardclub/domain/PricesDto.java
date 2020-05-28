@@ -1,0 +1,13 @@
+package com.magalera.bilardclub.domain;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
+public class PricesDto {
+    private Long id;
+    private Double tablePrice;
+    private Double bilardSoccerPrice;
+    private Double tournamentPrice;
+}
