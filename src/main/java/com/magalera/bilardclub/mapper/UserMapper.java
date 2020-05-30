@@ -10,6 +10,7 @@ public class UserMapper {
     public User mapToUser(UserDto userDto) {
         return User.builder()
                 .id(userDto.getId())
+                .type(userDto.getType())
                 .firstName(userDto.getFirstName())
                 .lastName(userDto.getLastName())
                 .email(userDto.getEmail())
@@ -19,6 +20,7 @@ public class UserMapper {
     public UserDto mapToUserDto(User user) {
         return UserDto.builder()
                 .id(user.getId())
+                .type(user.getType())
                 .firstName(user.getFirstName())
                 .lastName(user.getLastName())
                 .email(user.getEmail())

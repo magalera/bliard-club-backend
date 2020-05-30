@@ -13,7 +13,9 @@ public class BilardClubMapper {
                 .name(bilardClubDto.getName())
                 .tables(bilardClubDto.getTables())
                 .bilardSoccers(bilardClubDto.getBilardSoccers())
-                .tournament(bilardClubDto.getTournament()).build();
+                .tournament(bilardClubDto.getTournament())
+                .city(bilardClubDto.getCity())
+                .prices(bilardClubDto.getPrices()).build();
     }
 
     public BilardClubDto mapToBilardClubDto(BilardClub bilardClub) {
@@ -22,6 +24,8 @@ public class BilardClubMapper {
                 .name(bilardClub.getName())
                 .tables(bilardClub.getTables())
                 .bilardSoccers(bilardClub.getBilardSoccers())
-                .tournament(bilardClub.getTournament()).build();
+                .tournament(bilardClub.getTournament())
+                .city(bilardClub.getCity())
+                .prices(bilardClub.getPrices()).build();
     }
 }

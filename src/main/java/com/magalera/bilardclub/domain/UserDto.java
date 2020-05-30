@@ -9,6 +9,7 @@ import lombok.Getter;
 @Getter
 public class UserDto {
     private Long id;
+    private UserType type;
     private String firstName;
     private String lastName;
     private String email;

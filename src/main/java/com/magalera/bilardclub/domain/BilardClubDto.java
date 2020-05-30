@@ -15,4 +15,6 @@ public class BilardClubDto {
     private List<Table> tables;
     private List<BilardSoccer> bilardSoccers;
     private Tournament tournament;
+    private City city;
+    private Prices prices;
 }

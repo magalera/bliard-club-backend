@@ -24,7 +24,8 @@ public class Prices {
 
     private Double tournamentPrice;
 
-    @OneToOne(mappedBy = "prices")
-    private BilardClub bilardClub;
+    /*@OneT
+    oOne(mappedBy = "prices")
+    private BilardClub bilardClub;*/
 
 }

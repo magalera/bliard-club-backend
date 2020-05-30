@@ -22,11 +22,11 @@ public class City {
 
     private String name;
 
-    @OneToMany(
+   /* @OneToMany(
             targetEntity = BilardClub.class,
             mappedBy = "city",
             cascade = CascadeType.ALL,
             fetch = FetchType.EAGER
     )
-    private List<BilardClub> clubs;
+    private List<BilardClub> clubs;*/
 }

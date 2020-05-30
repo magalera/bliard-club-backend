@@ -1,6 +1,7 @@
 package com.magalera.bilardclub.repository;
 
 import com.magalera.bilardclub.domain.User;
+import com.magalera.bilardclub.domain.UserType;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,7 @@ public class UserRepositoryTestSuite {
     @Test
     public void testUserRepository(){
         // Given
-        User user = User.builder().firstName("Tommy").lastName("Sullivan").email("tommy.sullivan@gmail.com").password("xYz!@#").build();
+        User user = User.builder().type(UserType.BILLIARD_PLAYER).firstName("Tommy").lastName("Sullivan").email("tommy.sullivan@gmail.com").password("xYz!@#").build();
 
         // When
         User saved = userRepository.save(user);

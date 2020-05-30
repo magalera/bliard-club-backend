@@ -20,12 +20,16 @@ public class User {
     private Long id;
 
     @NotNull
+    private UserType type;
+
+    @NotNull
     private String firstName;
 
     @NotNull
     private String lastName;
 
     @NotNull
+    @Column(unique = true)
     private String email;
 
     @NotNull
