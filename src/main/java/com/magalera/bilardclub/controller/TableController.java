@@ -21,7 +21,7 @@ public class TableController {
     private TableRepository repository;
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
-    public TableDto add(TableDto tableDto) {
+    public TableDto add(@RequestBody TableDto tableDto) {
         Table table = repository.save(mapper.mapToTable(tableDto));
         return mapper.mapToTableDto(table);
     }
@@ -32,7 +32,7 @@ public class TableController {
     }
 
     @PutMapping(consumes = APPLICATION_JSON_VALUE)
-    public TableDto update(TableDto tableDto) {
+    public TableDto update(@RequestBody TableDto tableDto) {
         Table table = repository.save(mapper.mapToTable(tableDto));
         return mapper.mapToTableDto(table);
     }
