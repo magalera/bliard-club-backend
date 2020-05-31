@@ -4,7 +4,6 @@ import com.magalera.bilardclub.domain.City;
 import com.magalera.bilardclub.domain.CityDto;
 import com.magalera.bilardclub.mapper.CityMapper;
 import com.magalera.bilardclub.repository.CityRepository;
-
 import com.magalera.bilardclub.service.CityDbService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

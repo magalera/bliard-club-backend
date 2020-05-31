@@ -15,8 +15,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Optional;
-
 import static java.util.Optional.of;
 import static org.hamcrest.Matchers.is;
 import static org.mockito.Mockito.when;
@@ -58,6 +56,7 @@ public class BilardSoccerControllerTestSuite {
 
     @Test
     public void testGet() throws Exception {
+        // Given
         BilardSoccer bilardSoccer = BilardSoccer.builder().id(1L).number(0).isAvailable(false).build();
         BilardSoccerDto bilardSoccerDto = BilardSoccerDto.builder().id(1L).number(0).isAvailable(false).build();
 
