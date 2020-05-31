@@ -38,13 +38,13 @@ public class UserControllerTestSuite {
     public void testRegistration() throws Exception {
         // Given
         User user = User.builder().type(UserType.BILLIARD_PLAYER).firstName("Tommy").lastName("Sullivan").email("tommy.sullivan@gmail.com").password("xYz!@#").build();
-        UserDto userdto = UserDto.builder().type(UserType.BILLIARD_PLAYER).firstName("Tommy").lastName("Sullivan").email("tommy.sullivan@gmail.com").password("xYz!@#").build();
+        UserDto userDto = UserDto.builder().type(UserType.BILLIARD_PLAYER).firstName("Tommy").lastName("Sullivan").email("tommy.sullivan@gmail.com").password("xYz!@#").build();
 
         when(repository.save(user)).thenReturn(user);
-        when(mapper.mapToUserDto(user)).thenReturn(userdto);
+        when(mapper.mapToUserDto(user)).thenReturn(userDto);
 
         Gson gson = new Gson();
-        String jsonContent = gson.toJson(userdto);
+        String jsonContent = gson.toJson(userDto);
 
         // When & Then
         mockMvc.perform(post("/v1/user")
