@@ -12,9 +12,9 @@ import java.util.List;
 public class BilardClubDto {
     private Long id;
     private String name;
-    private List<Table> tables;
-    private List<BilardSoccer> bilardSoccers;
-    private Tournament tournament;
-    private City city;
-    private Prices prices;
+    private List<TableDto> tables;
+    private List<BilardSoccerDto> bilardSoccers;
+    private TournamentDto tournament;
+    private CityDto city;
+    private PricesDto prices;
 }
