@@ -1,9 +1,6 @@
 package com.magalera.bilardclub.repository;
 
-import com.magalera.bilardclub.domain.Reservation;
-import com.magalera.bilardclub.domain.ReservationType;
-import com.magalera.bilardclub.domain.Table;
-import com.magalera.bilardclub.domain.User;
+import com.magalera.bilardclub.domain.*;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +34,7 @@ public class ReservationRepositoryTestSuite {
         tableRepository.save(table1);
         Timestamp startDate = Timestamp.valueOf(LocalDateTime.now());
         Timestamp endDate = Timestamp.valueOf(LocalDateTime.now());
-        User user = User.builder().firstName("Tommy").lastName("Sullivan").email("tommy.sullivan@gmail.com").password("xYz!@#").build();
+        User user = User.builder().type(UserType.BILLIARD_PLAYER).firstName("Tommy").lastName("Sullivan").email("tommy.sullivan@gmail.com").password("xYz!@#").build();
         userRepository.save(user);
         Reservation reservation = Reservation.builder().table(table1).type(ReservationType.TABLE).startDate(startDate).endDate(endDate).user(user).build();
 
@@ -48,6 +45,7 @@ public class ReservationRepositoryTestSuite {
         Long id = saved.getId();
         Optional<Reservation> actualReservation = reservationRepository.findById(id);
         assertTrue(actualReservation.isPresent());
+        System.out.println("THE TIME " + reservation.getStartDate().toString());
 
         // CleanUp
         reservationRepository.deleteById(id);

@@ -35,6 +35,6 @@ public class User {
     @NotNull
     private String password;
 
-    @OneToOne(mappedBy = "user")
-    private Reservation reservation;
+    /*@OneToOne(mappedBy = "user")
+    private Reservation reservation;*/
 }

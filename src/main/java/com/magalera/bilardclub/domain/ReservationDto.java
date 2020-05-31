@@ -14,4 +14,5 @@ public class ReservationDto {
     private ReservationType type;
     private Timestamp startDate;
     private Timestamp endDate;
+    private User user;
 }

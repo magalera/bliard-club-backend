@@ -21,7 +21,7 @@ public class ReservationController {
     private ReservationRepository repository;
 
     @PostMapping(consumes = APPLICATION_JSON_VALUE)
-    public ReservationDto craete(ReservationDto reservationDto){
+    public ReservationDto create(@RequestBody ReservationDto reservationDto){
         Reservation reservation = repository.save(mapper.mapToReservation(reservationDto));
         return mapper.mapToReservationDto(reservation);
     }
@@ -32,7 +32,7 @@ public class ReservationController {
     }
 
     @PutMapping(consumes = APPLICATION_JSON_VALUE)
-    public ReservationDto update(ReservationDto reservationDto){
+    public ReservationDto update(@RequestBody ReservationDto reservationDto){
         Reservation reservation = repository.save(mapper.mapToReservation(reservationDto));
         return mapper.mapToReservationDto(reservation);
     }

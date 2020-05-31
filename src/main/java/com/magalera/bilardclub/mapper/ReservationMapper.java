@@ -12,7 +12,8 @@ public class ReservationMapper {
                 .id(reservationDto.getId())
                 .type(reservationDto.getType())
                 .startDate(reservationDto.getStartDate())
-                .endDate(reservationDto.getEndDate()).build();
+                .endDate(reservationDto.getEndDate())
+                .user(reservationDto.getUser()).build();
     }
 
     public ReservationDto mapToReservationDto(Reservation reservation) {
@@ -20,6 +21,7 @@ public class ReservationMapper {
                 .id(reservation.getId())
                 .type(reservation.getType())
                 .startDate(reservation.getStartDate())
-                .endDate(reservation.getEndDate()).build();
+                .endDate(reservation.getEndDate())
+                .user(reservation.getUser()).build();
     }
 }
