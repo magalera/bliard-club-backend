@@ -5,6 +5,8 @@ import com.magalera.bilardclub.domain.ReservationDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.sql.Timestamp;
+
 @Component
 public class ReservationMapper {
     @Autowired
@@ -14,8 +16,8 @@ public class ReservationMapper {
         return Reservation.builder()
                 .id(reservationDto.getId())
                 .type(reservationDto.getType())
-                .startDate(reservationDto.getStartDate())
-                .endDate(reservationDto.getEndDate())
+                .startDate(new Timestamp(reservationDto.getStartDate()))
+                .endDate(new Timestamp(reservationDto.getEndDate()))
                 .user(userMapper.mapToUser(reservationDto.getUser())).build();
     }
 
@@ -23,8 +25,8 @@ public class ReservationMapper {
         return ReservationDto.builder()
                 .id(reservation.getId())
                 .type(reservation.getType())
-                .startDate(reservation.getStartDate())
-                .endDate(reservation.getEndDate())
+                .startDate(reservation.getStartDate().getTime())
+                .endDate(reservation.getEndDate().getTime())
                 .user(userMapper.mapToUserDto(reservation.getUser())).build();
     }
 }

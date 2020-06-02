@@ -8,6 +8,8 @@ import com.magalera.bilardclub.service.ReservationDbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 @RestController
@@ -26,7 +28,7 @@ public class ReservationController {
         return mapper.mapToReservationDto(reservation);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping(value = "/{id}", produces = APPLICATION_JSON_VALUE)
     public ReservationDto show(@PathVariable Long id){
         return mapper.mapToReservationDto(repository.findById(id).get());
     }

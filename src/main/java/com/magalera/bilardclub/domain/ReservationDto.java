@@ -12,7 +12,7 @@ import java.sql.Timestamp;
 public class ReservationDto {
     private Long id;
     private ReservationType type;
-    private Timestamp startDate;
-    private Timestamp endDate;
+    private Long startDate;
+    private Long endDate;
     private UserDto user;
 }

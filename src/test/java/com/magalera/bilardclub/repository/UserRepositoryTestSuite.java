@@ -21,7 +21,7 @@ public class UserRepositoryTestSuite {
     @Test
     public void testUserRepository(){
         // Given
-        User user = User.builder().type(UserType.BILLIARD_PLAYER).firstName("Tommy").lastName("Sullivan").email("tommy.sullivan@gmail.com").password("xYz!@#").build();
+        User user = User.builder().type(UserType.BILLIARD_PLAYER).firstName("Tommy").lastName("Sullivan").email("tommy.sullivan88@gmail.com").password("xYz!@#").build();
 
         // When
         User saved = userRepository.save(user);
